@@ -1,0 +1,65 @@
+baseURL = "https://betty-h0805.github.io/"
+title = "Hugo Zzo Theme"
+theme = "zzo"
+
+defaultContentLanguage = "zh" # 默認中文
+defaultContentLanguageInSubdir = false # 不使用多語言設定時設定f
+hasCJKLanguage = false # 不使用多語言設定設定f
+
+summaryLength = 70
+buildFuture = true
+
+copyright = "&copy;{year}, All Rights Reserved"
+timeout = 10000
+enableEmoji = true
+paginate = 13
+rssLimit = 100
+
+enableGitInfo = false
+googleAnalytics = "UA-XXX-XX"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xHTML = true
+  [markup.highlight]
+    codeFences = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+  section = ["HTML", "RSS", "SearchIndex"]
+  taxonomyTerm = ["HTML", "RSS", "SearchIndex"]
+  taxonomy = ["HTML", "RSS", "SearchIndex"]
+
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[related]
+
+  [[related.indices]]
+  name = "categories" # 以分類作為相關
+  weight = 1.0
+  includeNewer = true
+
+  [[related.indices]]
+  name = "tags" # 以tags作為相關
+  weight = 1.0
+  includeNewer = true
